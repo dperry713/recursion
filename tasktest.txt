@@ -1,0 +1,48 @@
+tasks = [
+    {
+        'id': 1,
+        'name': 'Task A',
+        'priority': 3,
+        'subtasks': []
+    },
+    {
+        'id': 2,
+        'name': 'Task B',
+        'priority': 1,
+        'subtasks': []
+    }
+]
+output = [{'id': 1, 'name': 'Task A', 'priority': 3}, {'id': 2, 'name': 'Task B', 'priority': 1}]
+
+tasks = [
+    {
+        'id': 1,
+        'name': 'Main Task',
+        'priority': 5,
+        'subtasks': [
+            {'id': 2, 'name': 'Subtask 1', 'priority': 1},
+            {'id': 3, 'name': 'Subtask 2', 'priority': 4}
+        ]
+    }
+]
+output = [{'id': 1, 'name': 'Main Task', 'priority': 5}, {'id': 3, 'name': 'Subtask 2', 'priority': 4}, {'id': 2, 'name': 'Subtask 1', 'priority': 1}]
+
+Traversal: 
+𝑂(𝑛)O(n), where 𝑛
+n is the total number of tasks (including nested subtasks).
+
+Sorting: 
+𝑂(𝑘log𝑘)O(klogk), where 𝑘
+k is the number of tasks at each level.
+
+Overall: 
+𝑂(𝑛log𝑘)O(nlogk) in general, depending on the number of tasks at each level.
+
+Stack Space: 
+𝑂(𝑑)O(d), where d is the depth of the hierarchy due to recursion.
+
+Auxiliary Space for Sorting: 
+𝑂(𝑘)O(k) for tasks at each level.
+
+Overall: 
+𝑂(𝑑+𝑘)O(d+k).
